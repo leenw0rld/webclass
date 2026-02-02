@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 60px 60px 10px 60px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: hsl(0, 49%, 93%);
+}
+h1 {
+    font-size: 50px;
+    color:hsl(298, 65%, 29%);
+}
+h2 {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: italic;
+    margin: 0 0 30px 30px;
+    color:hsl(298, 65%, 29%);
+}
+h3 {
+    color:hsl(298, 65%, 29%);
+}
+p{
+    font-style:italic;
+    color:hsl(298, 65%, 29%);
+}
+div {
+    width: 400px;
+    overflow-wrap: break-word;
+}
+.b {
+    margin-left: auto;
+    margin-right: auto;
+}
+.c {
+    margin-left: auto; /* Pushes the div to the right */
+    margin-right: 0;
+}
+img {
+    width: 50%;
+    margin-left: 0;
+}
+h6 {
+    font-weight: normal;
+}
