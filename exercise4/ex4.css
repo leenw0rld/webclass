@@ -52,7 +52,7 @@ footer {
 
 /* scatter around center */
 .icon1  { translate: -250px -150px; animation-duration: 1.5s;animation-name: bounce; }
-.icon2  { translate:  320px  140px; animation-duration: 1.6s; animation-name: bounceLeft; }
+.icon2  { translate:  330px  200px; animation-duration: 1.6s; animation-name: bounceLeft; }
 .icon3  { translate:   90px  -80px; animation-duration: 2.1s;  animation-name: bounce; }
 .icon4  { translate:  270px -200px; animation-duration: 1.2s; animation-name: bounceLeft; }
 .icon5  { translate: -280px  210px; animation-duration: 1.3s;  animation-name: bounceLeft; }
