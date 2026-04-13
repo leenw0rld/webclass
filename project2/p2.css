@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home-page {
+    background: linear-gradient(to bottom, #a3e1fc 1%,#ccedfa 58%,hsl(208, 53%, 77%) 82%,#6689b1 100%);
+    min-height: 100vh;
+    position: relative;
+}
+.home-page h1 {
+    color: #f08cbc;
+    font-size: 5vw;
+    text-align: center;
+    padding-top: 100px;
+    font-family: "Schoolbell", cursive;
+    animation: glow 1.5s infinite alternate;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 20px hsl(0, 0%, 100%); }
+  to   { text-shadow: 0 0 10px #fff, 0 0 30px #ffffff, 0 0 50px #ffffff; }
+}
+.main { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
+}
+.main-nyota {
+    width: 50%;  /* changed from 100px */
+    height: auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.main-nyota img {
+    width: 30vw;
+    height: auto;
+    animation: bounce 1.5s infinite;
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+h2 {
+    color: #f08cbc;
+    font-size: 2vw;
+    text-align: center;
+    padding-top: 10px;
+    font-family: "Gamja Flower", cursive;
+}
+.green-deco {
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+    width: 100%;  /* full width so centering works */
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.green-deco img {
+    width: 17%;  
+    height: auto;
+}
+.two {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    position: relative;
+}
+h3 {
+    color: #f08cbc;
+    font-size: 3vw;
+    text-align: center;
+    padding-bottom: 8px;
+    font-family: "Gamja Flower", cursive;
+}
+p {
+    color: #f08cbc;
+    font-size: 2vw;
+    font-family: "Gamja Flower", cursive;
+}
+.nyota2 img {
+    width: 22vw;
+    height: auto;   
+}
+.nyota2 img:hover {
+    animation: rotate 5s infinite linear;
+}
+@keyframes rotate {
+    0% {transform: rotate(0deg) scale(1,1)}
+    100% {transform: rotate(360deg) scale(1,1)}
+}
+.lumi-btn {
+    position: absolute;
+    left: 67%;
+    top: 50%;
+    animation: zoom .8s infinite alternate;
+}
+.lumi-btn img {
+    width: 11vw;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 40px #f08cbc);
+}
+@keyframes zoom {
+    0%   { transform: scale(1);}
+    100% { transform: scale(1.08); }
+}
+.btn-text {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* perfectly centers the text */
+    font-family: "Gamja Flower", cursive;
+    font-size: 1.5vw;
+    line-height: .8;
+    color: #f08cbc;
+    pointer-events: none; /* so clicks pass through to the link */
+}
+.home-page .quote {
+    margin: 200px 200px 50px 200px;
+}
+h4 {
+    color: #f08cbc;
+    font-size: 3vw;
+    text-align: center;
+    padding-top: 20px;
+    font-family: "Schoolbell", cursive;
+    animation: glow 1.5s infinite alternate;
+}
+.page2-btn {
+    background-color: transparent;
+    border: 3px solid #f08cbc;
+    border-radius: 15px;
+    color: #f08cbc;
+    padding: 10px 20px;
+    font-size: 1.5vw;
+    font-family: "Gamja Flower", cursive;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.page2-btn:hover {
+    background-color: #f08cbc;
+    color: #a3e1fc;
+}
+footer {
+    text-align: leeft;
+    font-family: "Gamja Flower", sans-serif;
+    font-size: 2.5vw;
+    color: #f08cbc;
+    margin-top: auto;    /* pushes footer to bottom */
+    padding: 0 0 0 15px;
+}
+
+/* MEET LUMI PAGE */
+.lumi-page {
+    background: linear-gradient(to bottom, #fcf6b2 1%,hsl(43, 100%, 93%) 100%);
+    min-height: 100vh;
+    position: relative;
+}
+
+.lumi-page h1 {
+    color: #81dae6;
+    font-size: 3vw;
+    text-align: center;
+    padding-top: 100px;
+    font-family: "Schoolbell", cursive;
+    animation: glow 1.5s infinite alternate;
+}
+.nyota-lumi {
+    width: 50%;  /* changed from 100px */
+    height: auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.nyota-lumi img {
+    width: 30vw;
+    height: auto;
+    animation: bounce 1.5s infinite;
+}
+
+.lumi-hero {
+    position: relative; /* bubbles anchor here instead of the whole page */
+    display: flex;
+    justify-content: center;
+}
+.bubbles1 {
+    position: absolute;
+    left: 60%;
+    top: 25%;
+}
+.bubbles2 {
+    position: absolute;
+    left: 30%;
+    top: 45%;
+}
+.bubbles1 img {
+    width: 11vw;
+    height: auto;
+    display: block;
+}
+.bubbles2 img {
+    width: 11vw;
+    height: auto;
+    display: block;
+    rotate: 180deg;
+}
+details {
+    color: #5d7bb0;
+    font-size: 3vw;
+    text-align: center;
+    padding-top: 20px;
+    font-family: "Schoolbell", cursive;
+    animation: glow 1.5s infinite alternate;
+}
+summary {
+    list-style: none; /* removes the arrow */
+    margin-bottom: 100px;
+    text-shadow: 0 0 10px #9bd9f8, 0 0 20px #9bd9f8;
+    animation: zoom .8s infinite alternate;
+}
+summary:hover {
+    cursor: pointer;
+}
+.text1 {
+    cursor: pointer;
+    font-family: "Gamja Flower", cursive;
+    color: #f08cbc;
+    font-size: 2vw;
+    text-align: center;
+}
+.text1 h5 {
+    font-family: "Gamja Flower", cursive;
+    color: #f08cbc;
+    font-size: 2vw;
+    padding-top: 5px;
+}
+
+
+
+
+
+
+
+/* fonts */
+.dongle-regular {
+  font-family: "Dongle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.jua-regular {
+  font-family: "Jua", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.schoolbell-regular {
+  font-family: "Schoolbell", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.gamja-flower-regular {
+  font-family: "Gamja Flower", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
