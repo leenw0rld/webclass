@@ -8,6 +8,7 @@
     background: linear-gradient(to bottom, #a3e1fc 1%,#ccedfa 58%,hsl(208, 53%, 77%) 82%,#6689b1 100%);
     min-height: 100vh;
     position: relative;
+    overflow-x: hidden;
 }
 .home-page h1 {
     color: #f08cbc;
@@ -33,11 +34,73 @@
     padding-top: 20px;
     display: flex;
     justify-content: center;
+    z-index: 1;
 }
 .main-nyota img {
     width: 30vw;
     height: auto;
     animation: bounce 1.5s infinite;
+}
+.nyota-hero {
+    position: relative; /* bubbles anchor here instead of the whole page */
+    display: flex;
+    justify-content: center;
+}
+.cloud1 {
+    position: absolute;
+    left: 370px;  
+    top: -10%;
+    animation: float-cloud 10s linear infinite;
+}
+.cloud2 {
+    position: absolute;
+    left: -100px;
+    top: 50%;
+    animation: float-cloud 10s linear infinite;
+}
+.cloud1 img {
+    width: 18vw;
+    height: auto;
+    display: block;
+}
+.cloud2 img {
+    width: 11vw;
+    height: auto;
+    display: block;
+}
+.cloud3 {
+    position: absolute;
+    right: -420px;
+    top: 56%;
+    animation: float-cloud 10s linear infinite;
+}
+.cloud3 img {
+    width: 12vw;
+    height: auto;
+    display: block;
+}
+.cloud4 {
+    position: absolute;
+    left: -380px;
+    top: 30%;
+    animation: float-cloud 10s linear infinite;
+}
+.cloud4 img {
+    width: 12vw;
+    height: auto;
+    display: block;
+    transform: scaleX(-1);
+}
+.cloud1 { animation-delay: -10s; }
+.cloud2 { animation-delay: -8s; }
+.cloud3 { animation-delay: -0s; }
+.cloud4 { animation-delay: -2s; }
+
+@keyframes float-cloud {
+    0%   { transform: translateX(-200px); opacity: 0.5; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: translateX(100vw); opacity: 0.5; }
 }
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
@@ -123,9 +186,9 @@ p {
     pointer-events: none; /* so clicks pass through to the link */
 }
 .home-page .quote {
-    margin: 200px 200px 50px 200px;
+    margin: 150px 200px 50px 200px;
 }
-h4 {
+.home-page h4 {
     color: #f08cbc;
     font-size: 3vw;
     text-align: center;
@@ -155,7 +218,7 @@ h4 {
     color: #a3e1fc;
 }
 footer {
-    text-align: leeft;
+    text-align: left;
     font-family: "Gamja Flower", sans-serif;
     font-size: 2.5vw;
     color: #f08cbc;
@@ -169,7 +232,6 @@ footer {
     min-height: 100vh;
     position: relative;
 }
-
 .lumi-page h1 {
     color: #81dae6;
     font-size: 3vw;
@@ -198,13 +260,13 @@ footer {
 }
 .bubbles1 {
     position: absolute;
-    left: 60%;
-    top: 25%;
+    left: 320px;  /* tweak until it looks right */
+    top: 10%;
 }
 .bubbles2 {
     position: absolute;
-    left: 30%;
-    top: 45%;
+    left: -50px;
+    top: 57%;
 }
 .bubbles1 img {
     width: 11vw;
@@ -217,41 +279,445 @@ footer {
     display: block;
     rotate: 180deg;
 }
-details {
+.cat-quote {
     color: #5d7bb0;
     font-size: 3vw;
     text-align: center;
     padding-top: 20px;
     font-family: "Schoolbell", cursive;
-    animation: glow 1.5s infinite alternate;
+    filter: drop-shadow(0 0 40px hsl(205, 86%, 77%));
 }
 summary {
     list-style: none; /* removes the arrow */
-    margin-bottom: 100px;
+    margin-top: 70px;
+    margin-bottom: 40px;
     text-shadow: 0 0 10px #9bd9f8, 0 0 20px #9bd9f8;
     animation: zoom .8s infinite alternate;
+    text-decoration: underline;
 }
 summary:hover {
     cursor: pointer;
 }
 .text1 {
-    cursor: pointer;
     font-family: "Gamja Flower", cursive;
-    color: #f08cbc;
-    font-size: 2vw;
+    color: #5d7bb0;
+    font-size: 30px;
     text-align: center;
+    margin-bottom: 70px;
 }
-.text1 h5 {
+
+.home-btn {
+    background-color: #a3e1fc;
+    border: 3px solid #5d7bb0;
+    border-radius: 15px;
+    color: #5d7bb0;
+    padding: 10px 20px;
+    font-size: 1.5vw;
     font-family: "Gamja Flower", cursive;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.home-btn:hover {
+    background-color: #5d7bb0;
+    color: #a3e1fc;
+}
+.img-btn {
+    position: absolute;
+    right: 100px;
+    top: 700px;
+}
+.img-btn img {
+    width: 11vw;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 40px hsl(205, 86%, 77%));
+}
+.house-btn {
+    position: absolute;
+    left: 100px;
+    top: 820px;
+}
+.house-btn img {
+    width: 11vw;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 40px hsl(205, 86%, 77%));
+}
+.clock-btn {
+    position: absolute;
+    right: 200px;
+    top: 980px;
+}
+.clock-btn img {
+    width: 11vw;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 40px hsl(205, 86%, 77%));
+}
+.lumi-page .footer {
+    color: #5d7bb0;
+    margin-top: 290px;
+}
+
+/* INSIDE NYOTA'S WORLD PAGE */
+.page2 {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: row; /* side by side */
+    min-height: 100vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    background: none;
+}
+.panel1 {
+    background: linear-gradient(to right, #fccdb2 1%,hsl(43, 72%, 87%) 100%);
+    width: 4280px;
+    position: relative;
+    height: 100vh;      /* exact screen height, no more */
+    flex-shrink: 0;
+}
+.sun-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+.sun-img img {
+    height: 100%;  /* fill the div */
+    width: auto;
+    display: block; 
+}
+
+.page2 h1 {
     color: #f08cbc;
-    font-size: 2vw;
-    padding-top: 5px;
+    font-size: 4vw;
+    margin: 60px 0 10px 350px;
+    font-family: "Schoolbell", cursive;
+}
+.page2 h2 {
+    color: #f08cbc;
+    font-size: 1.8vw;
+    margin: 0px 0 50px 420px;
+    font-family: "Gamja Flower", cursive;
+    text-align: left;
+}
+
+.nyotapopup1 {
+    position: absolute;
+    display: inline-block; /* shrink wraps around the image */
+    top: 350px;   
+    left: 400px
+}
+.nyotastar {
+    list-style: none;
+    cursor: pointer;
+    margin-bottom: 0;
+    animation: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nyotastar img {
+    width: 300px;
+    height: auto; 
+}
+.page2 h4 {
+    text-align: center;
+    color: #f08cbc;
+    font-size: 1.5vw;
+    font-family: "Gamja Flower", cursive;
+    margin-top: -20px;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+    white-space: nowrap;
+}
+.popup-text {
+    position: fixed;
+    top: 50%; /* appears above the image */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f7eed2;
+    border-radius: 80px;
+    padding: 50px;
+    white-space: nowrap; /* keeps text on one line */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    z-index: 999; 
+}
+.popup-text p {
+    font-family: "Schoolbell", cursive;
+    font-size: 1.5vw;
+    color: #5d7bb0;
+    margin: 0;
+    padding: 10px;
+    line-height: 2;
+}
+.icon {
+    position: absolute;
+    top: 400px;
+    left: 620px;
+}
+.icon img {
+    width: 150px;
+    height: auto;
+    display: block;
+}
+.nyotapopup2 {
+    position: absolute;
+     /* shrink wraps around the image */
+    top: 250px;   
+    left: 800px
+}
+.nyotarain {
+    list-style: none;
+    cursor: pointer;
+    animation: none;
+}
+.nyotarain img {
+    width: 200px;
+    height: auto; 
+    margin-bottom: 25px;
+}
+.butterfly-btn {
+    position: absolute;
+    top: 520px;
+    left: 1050px;
+}
+.butterfly-btn img {
+    width: 100px;
+    height: auto;
+    display: block;
+    rotate: 45deg;
+}
+.nyotapopup3 {
+    position: absolute;
+    top: 400px;   
+    left: 1110px
+}
+.nyotaspring {
+    list-style: none;
+    cursor: pointer;
+    animation: none;
+}
+.nyotaspring img {
+    width: 250px;
+    height: auto; 
+    margin-bottom: 15px;
+}
+.space-btn {
+    position: absolute;
+    top: 240px;
+    left: 3120px;
+}
+.space-btn img {
+    width: 140px;
+    height: auto;
+    display: block;
+}
+.stars2-btn {
+    position: absolute;
+    top: 250px;
+    left: 1240px;
+}
+.stars2-btn img {
+    width: 200px;
+    height: auto;
+    display: block;
+}
+.nyotapopup4 {
+    position: absolute;
+    top: 100px;   
+    left: 1360px
+}
+.nyotastar2 {
+    list-style: none;
+    cursor: pointer;
+    animation: none;
+}
+.nyotastar2 img {
+    width: 350px;
+    height: auto; 
+    margin-bottom: 10px;
+}
+.firework-btn {
+    position: absolute;
+    top: 240px;
+    left: 1640px;
+}
+.firework-btn img {
+    width: 220px;
+    height: auto;
+    display: block;
+    rotate: -40deg;
+}
+.nyotapopup5 {
+    position: absolute;
+    top: 260px;   
+    left: 1770px
+}
+.nyotaletters {
+    list-style: none;
+    cursor: pointer;
+    animation: none;
+}
+.nyotaletters img {
+    width: 300px;
+    height: auto; 
+    margin-bottom: 0px;
+}
+.clover-btn {
+    position: absolute;
+    top: 180px;
+    left: 1930px;
+}
+.clover-btn img {
+    width: 260px;
+    height: auto;
+    display: block;
+}
+.nyotapopup6 {
+    position: absolute;
+    top: 1px;   
+    left: 2120px
+}
+.nyotaplant {
+    list-style: none;
+    cursor: pointer;
+    animation: none;
+}
+.nyotaplant img {
+    width: 300px;
+    height: auto; 
+    margin-bottom: 20px;
+}
+.nyotapopup7 {
+    position: absolute;
+    top: 140px;   
+    left: 2480px
+}
+.stars-btn {
+    position: absolute;
+    top: 100px;
+    left: 2330px;
+}
+.stars-btn img {
+    width: 260px;
+    height: auto;
+    display: block;
+    rotate: -65deg;
+}
+.nyotapink {
+    list-style: none;
+    cursor: pointer;
+    animation: none;
+}
+.nyotapink img {
+    width: 300px;
+    height: auto; 
+    margin-bottom: -10px;
+}
+.butterflies-btn {
+    position: absolute;
+    top: 180px;
+    left: 2680px;
+}
+.butterflies-btn img {
+    width: 260px;
+    height: auto;
+    display: block;
+}
+.nyotapopup8 {
+    position: absolute;
+    top: 55px;   
+    left: 2850px
+}
+.nyotastressed {
+    list-style: none;
+    cursor: pointer;
+    animation: none;
+}
+.nyotastressed img {
+    width: 300px;
+    height: auto; 
+    margin-bottom: 18px;
+}
+.nyotapopup9 {
+    position: absolute;
+    top: 205px;   
+    left: 3200px
+}
+.nyotacrown {
+    list-style: none;
+    cursor: pointer;
+    animation: none;
+}
+.nyotacrown img {
+    width: 300px;
+    height: auto; 
+    margin-bottom: -5px;
+}
+.combo-btn {
+    position: absolute;
+    top: 290px;
+    left: 3430px;
+}
+.combo-btn img {
+    width: 280px;
+    height: auto;
+    display: block;
+    transform: scaleX(-1);
+    rotate: -50deg;
+}
+.nyotapopup10 {
+    position: absolute;
+    top: 385px;   
+    left: 3640px
+}
+.nyotahome {
+    list-style: none;
+    cursor: pointer;
+    animation: none;
+}
+.nyotahome img {
+    width: 250px;
+    height: auto; 
+    margin-bottom: -5px;
+}
+.page2 .home-btn {
+    position: absolute;
+    top: 570px;
+    left: 3970px;
+    background: #facee4;
+    color: #f08cbc;
+    padding: 12px 24px;
+    border: 3px solid #f08cbc;
+    border-radius: 15px;
+    text-decoration: none;
+    font-family: "Gamja Flower", cursive;
+    font-size: 1.5vw;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.page2 .home-btn:hover {
+    background-color: #f08cbc;
+    color: #facee4;
+    border: 3px solid #facee4;
 }
 
 
-
-
-
+.page2 footer {
+    color: #f08cbc;
+    text-align: left;
+    font-family: "Gamja Flower", sans-serif;
+    font-size: 2.5vw;
+    margin-top: auto;    /* pushes footer to bottom */
+    padding: 0 0 0 15px;
+}
 
 
 /* fonts */
